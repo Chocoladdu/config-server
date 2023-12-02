@@ -1,0 +1,25 @@
+server:
+  port: 7091
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/yc_api?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7094/eureka
